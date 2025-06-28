@@ -10,7 +10,7 @@ mermaid: true
 ---
 Managing ingress in a fully serverless Kubernetes environment like EKS on Fargate comes with unique challenges. Most popular ingress controllers — such as NGINX Ingress and Traefik — assume access to traditional node groups or DaemonSets, making them difficult to run purely on Fargate.
 
-After exploring multiple options and running into many issues with existing controllers, I turned to Envoy Gateway — a modern, flexible, and CNCF-supported solution that fits the constraints of a Fargate-only environmen*.
+After exploring multiple options and running into many issues with existing controllers, I turned to Envoy Gateway — a modern, flexible, and CNCF-supported solution that fits the constraints of a Fargate-only environment.
 
 While there is plenty of documentation on running Envoy Gateway on EKS, most of it assumes a standard EKS setup with EC2 node groups. Unfortunately, these guides often miss the nuances and limitations specific to EKS Fargate, such as how to configure:
 
