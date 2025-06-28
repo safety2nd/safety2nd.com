@@ -8,23 +8,23 @@ toc: false
 comments: true
 mermaid: true
 ---
-Managing ingress in a fully serverless Kubernetes environment like **EKS on Fargate** comes with unique challenges. Most popular ingress controllers — such as **NGINX Ingress** and **Traefik** — assume access to traditional node groups or DaemonSets, making them difficult to run purely on Fargate.
+Managing ingress in a fully serverless Kubernetes environment like EKS on Fargate comes with unique challenges. Most popular ingress controllers — such as NGINX Ingress and Traefik — assume access to traditional node groups or DaemonSets, making them difficult to run purely on Fargate.
 
-After exploring multiple options and running into many issues with existing controllers, I turned to **Envoy Gateway** — a modern, flexible, and CNCF-supported solution that fits the constraints of a **Fargate-only environment**.
+After exploring multiple options and running into many issues with existing controllers, I turned to Envoy Gateway — a modern, flexible, and CNCF-supported solution that fits the constraints of a Fargate-only environmen*.
 
-While there is plenty of documentation on running Envoy Gateway on EKS, most of it assumes a standard EKS setup with **EC2 node groups**. Unfortunately, these guides often miss the nuances and limitations specific to **EKS Fargate**, such as how to configure:
+While there is plenty of documentation on running Envoy Gateway on EKS, most of it assumes a standard EKS setup with EC2 node groups. Unfortunately, these guides often miss the nuances and limitations specific to EKS Fargate, such as how to configure:
 
-- **Networking**
-- **Service types**
-- **Resource scheduling**
+- Networking
+- Service types
+- Resource scheduling
 
-This tutorial is a **practical guide** based on a combination of:
+This tutorial is a practical guide based on a combination of:
 
 - Official documentation
 - Community tutorials
-- A fair amount of personal **trial and error**
+- A fair amount of personal trial and error
 
-If you're looking to run **Envoy Gateway fully on EKS Fargate** — *without provisioning any EC2 nodes* — this guide is for you.
+If you're looking to run Envoy Gateway fully on EKS Fargate — *without provisioning any EC2 nodes* — this guide is for you.
 
 By default, when deploying Envoy Gateway in EKS using a Service of type LoadBalancer, AWS will provision a Classic Load Balancer (CLB). This behavior is automatic unless you have the AWS Load Balancer Controller installed and configured.
 
